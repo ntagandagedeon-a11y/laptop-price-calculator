@@ -6,7 +6,11 @@ import streamlit as st
 
 # Load the trained model
 import pickle
-loaded_model = pickle.load(open('C:/Users/USER/Downloads/ML laptop price prediction/Gedeon_laptop_price_prediction.pkl', 'rb'))
+
+model_path = r'C:\Users\USER\Downloads\ML laptop price prediction\Gedeon_laptop_price_prediction.pkl'
+
+with open(model_path, 'rb') as file:
+    loaded_model = pickle.load(file)
 def laptop_price_prediction(Brand,processor_speed, RAM_size, storage_capacity,Screen_Size,Weight):
     # Create a dataframe for the model
     new_laptop = pd.DataFrame([{
